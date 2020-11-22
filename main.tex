@@ -1,0 +1,159 @@
+\documentclass[12pt, a4paper, french, openright]{report}
+% version reliée
+% \documentclass[11pt, a4paper, french, openright, twoside]{report}
+\usepackage{svg}
+\usepackage{lipsum}
+\usepackage[french]{babel}
+\selectlanguage{french}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,textcomp}
+
+\usepackage[
+    left = \flqq,%
+    right = \frqq,%
+    leftsub = \flqq,%
+    rightsub = \frqq%
+]{dirtytalk}
+
+\usepackage{csquotes}
+\usepackage{hyperref}
+
+\usepackage{graphicx}
+\usepackage[nottoc]{tocbibind}
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage{titling}
+\usepackage[french,boxed,ruled,lined]{algorithm2e}
+
+\usepackage{verbatim}
+\usepackage[backend=biber]{biblatex}
+\usepackage{enumitem}
+\bibliography{bibliography}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\renewcommand{\thefootnote}{\alph{footnote}}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+
+\renewcommand{\chaptermark}[1]{\markboth{\bsc{\chaptername~\thechapter{} :} #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection{} \ #1}}
+\renewcommand{\headrulewidth}{0pt}
+%\lhead[\textsl{\leftmark}]{\textsl{\rightmark}}
+\chead[\textsl{\rightmark}]{\textsl{\leftmark}}
+\cfoot[\thepage]{\thepage}
+\setlength{\headheight}{15pt}
+
+\let\headruleORIG\headrule
+\renewcommand{\headrule}{\color{black} \headruleORIG}
+\renewcommand{\headrulewidth}{1.0pt}
+\usepackage{colortbl}
+\arrayrulecolor{black}
+\usepackage{tabularx}
+\renewcommand{\footrulewidth}{0.4pt}% 
+
+\usepackage{sectsty}
+\usepackage{lipsum}% just to generate some text
+\usepackage{glossaries}
+\makeglossaries
+
+\chaptertitlefont{\centering \MakeUppercase}
+
+
+
+
+\title{Pourquoi privilégier le NoSQL au SQL dans le domaine des SIG et comment l'appliquer ?}
+
+\author{Anthony NASCIMENTO}
+\usepackage[Lenny]{fncychap}
+\patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
+\renewcommand\headrulewidth{0pt}
+\fancyhead[L]{}
+\fancyhead[C]{}
+\fancyhead[R]{}
+\ChNumVar{\fontsize{60}{62}\usefont{OT1}{ptm}{m}{n}\selectfont\textcolor{red}}
+\makeatletter
+\patchcmd{\@makechapterhead}{\vspace*{50\p@}}{\vspace*{-35\p@}}{}{}
+\patchcmd{\@makeschapterhead}{\vspace*{50\p@}}{\vspace*{-35\p@}}{}{}
+\patchcmd{\DOTI}{\vskip 80\p@}{\vskip 40\p@}{}{}
+\patchcmd{\DOTIS}{\vskip 40\p@}{\vskip 0\p@}{}{}
+\makeatother
+\renewcommand\thesection{\color{red}\thechapter.\arabic{section}}
+
+\begin{document}
+
+\input{./introduction/title.tex}
+
+%page blanche
+\newpage
+~
+%ne pas numéroter cette page
+\thispagestyle{empty}
+\newpage
+
+%ne pas numéroter cette page
+\thispagestyle{empty}
+\input{./introduction/remerciements.tex}
+
+~
+\thispagestyle{empty}
+
+\newpage
+~
+\thispagestyle{empty}
+
+\setcounter{tocdepth}{1}
+\tableofcontents
+\thispagestyle{empty}
+\setcounter{page}{0}
+%ne pas numéroter le sommaire
+
+\newpage
+~
+\thispagestyle{empty}
+%recommencer la numérotation des pages à "1"
+\setcounter{page}{0}
+\newpage
+
+\input{./parties/intro.tex}
+
+\input{./parties/contexte.tex}
+
+\input{./parties/etat.tex}
+
+\input{./parties/apport.tex}
+
+\input{./parties/conclusion.tex}
+
+
+
+\newpage
+%\nocite{SpaceXFirstISS, IFPI2011Report, SpotifyBloomberg, SpotifyNewYorker}
+
+\printbibliography[
+heading=bibintoc,
+title={Bibliographie}
+]
+%report and book
+\clearpage %\cleardoublepage %for openright
+\listoffigures
+\clearpage %\cleardoublepage %for openright
+\listoftables
+\clearpage %\cleardoublepage %for openright
+
+\newpage
+\printglossaries
+
+\newpage
+\thispagestyle{empty}
+\vspace*{\fill}
+\begin{center}
+  Université Paris-Nanterre\\
+  200 Avenue de la République\\
+  92000 Nanterre
+\end{center}
+\vspace*{\fill}
+
+\end{document}

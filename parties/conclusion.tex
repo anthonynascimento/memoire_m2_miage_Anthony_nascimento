@@ -1,0 +1,10 @@
+\chapter{Conclusion}
+
+
+\paragraph{}Dans ce mémoire, j'ai pu présenter le domaine des \acrfull{SIG} avec ses composants dont les données possèdent une part importante. Nous nous sommes donc tourné sur l'étude du stockage de ces dernières via des bases de données relationnelles ou NoSQL. Cette réflexion a permis de comprendre que le NoSQL est plus adapté aux volumétries toujours plus importantes dans ce domaine.
+
+\paragraph{}Pour compléter cette étude du domaine, un panorama d'outils a été étudié. Tout d'abord ont été vues des solutions intégrant les principes de Codd à l'instar de PostGIS. Ont été également vus les différences entre les \acrshort{SGBD} avec des fonctions géométriques et les outils spécialisés dans le traitement de données géographiques. Par la suite, un zoom sur le NoSQL a été fait avec l'étude de MongoDB. Ce dernier offre de plus grandes libertés vis-à-vis du modèle utilisé. Pour compléter cela, l'étude des technologies de traitement multidimensionnel comme SOLAP et des solutions sur Cloud ont été réalisés.
+
+\paragraph{}Toute cette réflexion a amené à comparer les deux types de bases de données. À partir d'un jeu de données commun, deux modélisations et traitement d'implémentation des modèles ont été proposés. Sur l'ensemble, le modèle doucment obtient une meilleure note que le modèle relationnel. Concernant l'interrogation, les résultats obtenus ont été corrects pour les deux, étant inférieurs à une seconde. Cependant, au vu de la source réduite en fonction des contraintes techniques, il s'avère que le relationnel obtient de meilleurs résultats. Cela vient à confirmer pour les petits jeux de données, le relationnel peut être privilégié.
+
+\paragraph{}Le bilan de ce mémoire vient à confirmer que le type de base de données doit dépendre des besoins techniques comme la volumétrie. Nous avons pu voir par l'application que sur les petits jeux de données bien structurés, le relationnel est à privilégier. Cependant, si on s'engage sur des volumes plus importants, sur un stockage de manière distribué ou sur des formats moins structurés, le NoSQL reste la meilleure solution.
